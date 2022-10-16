@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <SwitchPreference
+        app:key="darkmode"
+        app:title="다크모드 활성화" />
+    <SwitchPreferenceCompat
+        app:key="noti"
+        app:title="알림 해제" />
+    <EditTextPreference
+        app:key="username"
+        app:defaultValue="닉네임을 입력해 주세요."
+        app:singleLineTitle="true"
+        app:title="닉네임 변경" />
+    <EditTextPreference
+        app:key="textsize"
+        app:title="글자 크기 변경" />
+</PreferenceScreen>
