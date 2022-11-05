@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <TextView
-            android:id="@+id/ko_ing"
+            android:id="@+id/auth_tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -22,7 +22,7 @@
             android:text="@string/ko_ing"
             android:textAppearance="@style/ko_ing" />
         <EditText
-            android:id="@+id/email"
+            android:id="@+id/auth_et_email"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
@@ -30,13 +30,13 @@
             android:drawablePadding="5dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
-            android:layout_below="@+id/ko_ing"
+            android:layout_below="@+id/auth_tv_title"
             android:hint="example@duksung.ac.kr"
             android:textColorHint="@color/hint"
             android:textSize="16dp"
             android:backgroundTint="@color/white" />
         <EditText
-            android:id="@+id/password"
+            android:id="@+id/auth_et_password"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
@@ -44,17 +44,17 @@
             android:drawablePadding="5dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="15dp"
-            android:layout_below="@+id/email"
+            android:layout_below="@+id/auth_et_email"
             android:inputType="textPassword"
             android:hint="password"
             android:textColorHint="@color/hint"
             android:textSize="16dp"
             android:backgroundTint="@color/white" />
         <Button
-            android:id="@+id/btn_login"
+            android:id="@+id/auth_btn_login"
             android:layout_width="229dp"
             android:layout_centerHorizontal="true"
-            android:layout_below="@id/password"
+            android:layout_below="@id/auth_et_password"
             android:layout_marginTop="35dp"
             android:text="Log in"
             android:textColor="@color/white"
@@ -67,17 +67,17 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_centerHorizontal="true"
-            android:layout_below="@+id/btn_login"
+            android:layout_below="@+id/auth_btn_login"
             android:layout_marginTop="8dp">
             <TextView
-                android:id="@+id/text_signup"
+                android:id="@+id/auth_tv_signup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Don't have an account?"
                 android:textColor="@color/white"
                 android:textSize="13sp"/>
             <TextView
-                android:id="@+id/btn_signup"
+                android:id="@+id/auth_btn_signup"
                 android:clickable="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

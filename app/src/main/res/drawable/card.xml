@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shape
+<shape xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     app:strokeColor="@color/black"
-    app:strokeWidth="1dp"
-    android:outlineSpotShadowColor="@color/white">
-
+    app:strokeWidth="1dp">
+    <!--
+    android:outlineSpotShadowColor="@color/white"       // api 수준 안 맞음
+    -->
 </shape>
