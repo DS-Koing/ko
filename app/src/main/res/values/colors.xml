@@ -10,4 +10,5 @@
     <color name="main">#FFDAABFF</color>
     <color name="hint">#F7F5FAFF</color>
     <color name="stroke">#D9D9D9FF</color>
+    <color name="warning">#FFAB41FF</color>
 </resources>

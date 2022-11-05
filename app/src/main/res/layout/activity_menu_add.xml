@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/add_toolbar"
+        app:title="메뉴 등록"
+        app:titleTextColor="@color/white"
+        android:background="@color/main"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <ImageButton
+            android:id="@+id/add_btn_menu"
+            android:layout_width="95dp"
+            android:layout_height="95dp"
+            android:background="@drawable/roundcorner"
+            android:layout_margin="10dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="15dp"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/add_et_name"
+                android:text="메뉴 이름"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/add_et_price"
+                android:text="메뉴 가격"/>
+        </LinearLayout>
+    </LinearLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="상품 등록"
+        android:backgroundTint="@color/main"
+        android:id="@+id/add_btn_add"/>
+</LinearLayout>

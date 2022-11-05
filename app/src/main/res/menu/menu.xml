@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/order_fragment"
+        android:id="@+id/order"
         android:enabled="true"
         android:icon="@drawable/order_selector"
         android:title="Order"/>
-    <item android:id="@+id/mypage_fragment"
+    <item android:id="@+id/mypage"
         android:enabled="true"
         android:icon="@drawable/mypage_selector"
         android:title="My page" />
