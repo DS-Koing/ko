@@ -8,7 +8,11 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Koing">
+        android:theme="@style/Theme.Koing"
+
+        android:usesCleartextTraffic="true"
+        >
+
         <activity
             android:name=".HistoryActivity"
             android:exported="false" />
@@ -28,5 +32,7 @@
             </intent-filter>
         </activity>
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET"/>
 
 </manifest>
