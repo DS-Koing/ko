@@ -29,11 +29,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '11'
     }
 }
 
@@ -56,6 +56,10 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    //서채은
+    implementation 'androidx.gridlayout:gridlayout:1.0.0'
+    //implementation 'com.android.support:design:33.0.0'
 
     //(박지호)HTTP 통신을 위한 Retrofit2 라이브러리 사용을 위해
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
