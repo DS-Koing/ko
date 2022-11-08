@@ -4,20 +4,16 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
 import com.example.koing.databinding.ActivityMainBinding
 import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
     private val fragmentOrder by lazy { FragmentOrder() }
     private val fragmentMyPage by lazy { FragmentMyPage() }
-    lateinit var binding : ActivityMainBinding
+    lateinit var binding: ActivityMainBinding
     lateinit var sharedPreferences: SharedPreferences
 
     var getManagerApiBtn: Button? = null
@@ -58,7 +54,7 @@ class MainActivity : AppCompatActivity() {
         var cartRetrofitInterface = RetrofitClient.getCartRetrofitInterface()
 
 
-        //(1) Manager_add 페이지 [프론트 아직 완성 X]
+        (1) Manager_add 페이지 [프론트 아직 완성 X]
         getManagerApiBtn = findViewById(R.id.getApiButton) as android.widget.Button?
         var foodnameText = findViewById(R.id.getName) as TextView //음식 메뉴
         var foodpriceText = findViewById(R.id.getPrice) as TextView //음식 가격
@@ -80,36 +76,34 @@ class MainActivity : AppCompatActivity() {
             })
 
 
-    }
+        }
 
-    private fun initNavigationBar(){
-        binding.bottomNavbar.run {
-            /* var badge = binding.bottomNavbar.getOrCreateBadge(R.id.order)
+        private fun initNavigationBar() {
+            binding.bottomNavbar.run {
+                /* var badge = binding.bottomNavbar.getOrCreateBadge(R.id.order)
             badge.isVisible = true
             badge.number = 99 */
-            setOnNavigationItemSelectedListener {
-                when (it.itemId) {
-                    R.id.order -> {
-                        changeFragment(fragmentOrder)
+                setOnNavigationItemSelectedListener {
+                    when (it.itemId) {
+                        R.id.order -> {
+                            changeFragment(fragmentOrder)
+                        }
+                        R.id.mypage -> {
+                            changeFragment(fragmentMyPage)
+                        }
                     }
-                    R.id.mypage -> {
-                        changeFragment(fragmentMyPage)
-                    }
+                    true
                 }
-                true
+                selectedItemId = R.id.order
             }
-            selectedItemId = R.id.order
         }
+
+        private fun changeFragment(fragment: Fragment) {
+            supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.main_layout, fragment)
+                .commit()
+        }
+
     }
-
-    private fun changeFragment(fragment: Fragment){
-        supportFragmentManager
-            .beginTransaction()
-            .replace(R.id.main_layout, fragment)
-            .commit()
-    }
-
-
-
-
 }

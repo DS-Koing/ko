@@ -1,6 +1,15 @@
 <resources>
     <string name="app_name">Koing</string>
-    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="bar_default">주문할 메뉴를 선택해주세요.</string>
+    <string name="tab1">2.라멘</string>
+    <string name="tab2">3.일식/양식</string>
+    <string name="tab3">4.한식/덮밥</string>
+    <string name="tab4">5.분식</string>
+    <string name="tab5">7.오늘의메뉴</string>
+    <string name="btn_order">Order</string>
+    <string name="btn_mypage">MyPage</string>
+    <string name="menu_name">메뉴 이름</string>
+    <string name="menu_price">0,000원</string>
 
     <!-- Preference Titles -->
     <string name="messages_header">Messages</string>
