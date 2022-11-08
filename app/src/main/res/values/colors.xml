@@ -11,4 +11,13 @@
     <color name="hint">#F7F5FAFF</color>
     <color name="stroke">#D9D9D9FF</color>
     <color name="warning">#FFAB41FF</color>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="MainColor">#DAABFF</color>
+    <color name="SecondaryColor">#656565</color>
+    <color name="sub">#DCC4E8</color>
+    <color name="yellow">#FFDA79</color>
+    <color name="lightGrey">#D9D9D9</color>
+    <color name="blue">#0093ED</color>
 </resources>
