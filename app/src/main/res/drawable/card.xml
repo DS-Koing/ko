@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- (이재현) 카드 레이아웃 디자인을 위한 파일 -->
 <shape xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
     app:strokeColor="@color/black"
@@ -7,3 +8,4 @@
     android:outlineSpotShadowColor="@color/white"       // api 수준 안 맞음
     -->
 </shape>
+

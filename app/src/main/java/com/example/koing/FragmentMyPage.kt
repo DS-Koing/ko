@@ -37,14 +37,19 @@ class FragmentMyPage : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val binding = FragmentMyPageBinding.inflate(inflater, container, false)
+
+        // (이재현) 찜한 상품 눌렀을 때
         binding.mypageBtnFav.setOnClickListener {
             val intent = Intent(context, FavoriteActivity::class.java)
             startActivity(intent)
         }
+
+        // (이재현) 주문내역 눌렀을 때
         binding.mypageBtnHistory.setOnClickListener {
             val intent = Intent(context, HistoryActivity::class.java)
             startActivity(intent)
         }
+
         return binding.root
     }
 
