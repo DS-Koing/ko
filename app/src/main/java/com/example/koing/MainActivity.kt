@@ -17,6 +17,7 @@ import retrofit2.Response
 class MainActivity : AppCompatActivity() {
     private val fragmentOrder by lazy { FragmentOrder() }
     private val fragmentMyPage by lazy { FragmentMyPage() }
+    private val fragmentCart by lazy {FragmentCart()}
     lateinit var binding : ActivityMainBinding
     lateinit var sharedPreferences: SharedPreferences
 
@@ -46,6 +47,9 @@ class MainActivity : AppCompatActivity() {
                 when (it.itemId) {
                     R.id.order -> {
                         changeFragment(fragmentOrder)
+                    }
+                    R.id.cart -> {
+                        changeFragment(fragmentCart)
                     }
                     R.id.mypage -> {
                         changeFragment(fragmentMyPage)

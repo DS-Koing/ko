@@ -156,18 +156,6 @@
 
     </ScrollView>
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:background="@color/MainColor"
-        app:itemIconTint="@color/white"
-        app:itemTextColor="@drawable/navbar_color_selector"
-        app:labelVisibilityMode="auto"
-        app:menu="@menu/menu" />
-
 <!--    <LinearLayout-->
 <!--        android:layout_width="match_parent"-->
 <!--        android:layout_height="50dp"-->
