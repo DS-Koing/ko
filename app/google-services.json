@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "482901943116",
+    "project_id": "koing-35af1",
+    "storage_bucket": "koing-35af1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:482901943116:android:68a739d8c9e2e83497e5e9",
+        "android_client_info": {
+          "package_name": "com.example.koing"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "482901943116-meidn5ecedgp1eh3mojpjv39m0330p2d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.koing",
+            "certificate_hash": "782ab8d094a70c83168f15de4be5292040fdfe09"
+          }
+        },
+        {
+          "client_id": "482901943116-ecs8pbeh4963c9h2c5ib9rfmuer7e8tb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBW9QEZvOG4dvkFEyzqdE70A-eIVdNTb6A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "482901943116-ecs8pbeh4963c9h2c5ib9rfmuer7e8tb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

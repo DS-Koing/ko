@@ -3,11 +3,14 @@ package com.example.koing
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.text.TextUtils
 import android.text.TextUtils.replace
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.preference.EditTextPreference
 import androidx.preference.ListPreference
+import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import com.example.koing.databinding.ActivityFavoriteBinding
 import com.example.koing.databinding.SettingsActivityBinding
@@ -55,9 +58,18 @@ class SettingsActivity : AppCompatActivity() {
         override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
             setPreferencesFromResource(R.xml.root_preferences, rootKey)
 
-            findPreference<ListPreference>("test1")?.setOnPreferenceChangeListener { preference, newValue ->
-                return@setOnPreferenceChangeListener true
+            val namePreference: EditTextPreference? = findPreference("username")
+            namePreference?.summaryProvider = Preference.SummaryProvider<EditTextPreference>{
+                preference ->
+                val text = preference.text
+                if(TextUtils.isEmpty(text)){
+                    "닉네임 설정이 되지 않았습니다."
+                }
+                else{
+                    "$text"
+                }
             }
+
         }
 
         override fun onResume() {

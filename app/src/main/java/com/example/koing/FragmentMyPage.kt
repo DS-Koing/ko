@@ -1,11 +1,14 @@
 package com.example.koing
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.preference.PreferenceManager
 import com.example.koing.databinding.FragmentMyPageBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -19,6 +22,8 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class FragmentMyPage : Fragment() {
+    lateinit var sharedPreferences: SharedPreferences
+    lateinit var binding:FragmentMyPageBinding
     private val fragmentSetting by lazy { SettingsFragment() }
     // TODO: Rename and change types of parameters
     private var param1: String? = null
@@ -37,7 +42,7 @@ class FragmentMyPage : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val binding = FragmentMyPageBinding.inflate(inflater, container, false)
+        binding = FragmentMyPageBinding.inflate(inflater, container, false)
 
         // (이재현) Settings 버튼
         binding.mypageBtnSetting.setOnClickListener {
@@ -57,7 +62,30 @@ class FragmentMyPage : Fragment() {
             startActivity(intent)
         }
 
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
+        var name = sharedPreferences.getString("username", "")
+        if(name.isNullOrEmpty())
+            name = "닉네임이 설정되지 않았습니다."
+        binding.mypageTvName.text = name
+
+        binding.mypageBtnLogout.setOnClickListener {
+            Auth.auth.signOut()
+            Auth.email = null
+        }
+
+        binding.mypageBtnDelAccount.setOnClickListener {
+        }
         return binding.root
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
+        var name = sharedPreferences.getString("username", "")
+        if(name.isNullOrEmpty())
+            name = "닉네임이 설정되지 않았습니다."
+        binding.mypageTvName.text = name
     }
 
     companion object {
