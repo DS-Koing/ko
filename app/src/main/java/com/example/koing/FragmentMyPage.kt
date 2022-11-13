@@ -19,6 +19,7 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class FragmentMyPage : Fragment() {
+    private val fragmentSetting by lazy { SettingsFragment() }
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -37,6 +38,12 @@ class FragmentMyPage : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val binding = FragmentMyPageBinding.inflate(inflater, container, false)
+
+        // (이재현) Settings 버튼
+        binding.mypageBtnSetting.setOnClickListener {
+            val intent = Intent(context, SettingsActivity::class.java)
+            startActivity(intent)
+        }
 
         // (이재현) 찜한 상품 눌렀을 때
         binding.mypageBtnFav.setOnClickListener {
