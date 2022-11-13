@@ -1,0 +1,22 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <SwitchPreferenceCompat
+        app:key="noti"
+        app:title="알림 해제" />
+    <EditTextPreference
+        app:key="username"
+        app:defaultValue="닉네임을 설정해 주세요."
+        app:singleLineTitle="true"
+        app:title="닉네임 변경" />
+    <EditTextPreference
+        app:key="textsize"
+        app:defaultValue="16dp"
+        app:title="글자 크기 변경" />
+    <ListPreference
+        app:defaultValue="reply"
+        app:entries="@array/reply_entries"
+        app:entryValues="@array/reply_values"
+        app:key="reply"
+        app:title="@string/reply_title"
+        app:useSimpleSummaryProvider="true" />
+</PreferenceScreen>
