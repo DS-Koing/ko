@@ -5,6 +5,11 @@
         android:enabled="true"
         android:icon="@drawable/order_selector"
         android:title="Order"/>
+    <item
+        android:id="@+id/cart"
+        android:enabled="true"
+        android:icon="@drawable/cart_selector"
+        android:title="Cart"/>
     <item android:id="@+id/mypage"
         android:enabled="true"
         android:icon="@drawable/mypage_selector"

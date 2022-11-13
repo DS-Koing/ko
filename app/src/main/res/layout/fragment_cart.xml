@@ -137,28 +137,6 @@
             android:textStyle="bold"
             android:background="@color/yellow"/>
 
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <com.google.android.material.bottomnavigation.BottomNavigationView
-                android:id="@+id/bottom_navbar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/MainColor"
-                app:itemIconTint="@color/white"
-                app:itemTextColor="@drawable/navbar_color_selector"
-                app:labelVisibilityMode="auto"
-                app:menu="@menu/menu" >
-
-                <TextView
-                    android:id="@+id/textView12"
-                    android:layout_width="20dp"
-                    android:layout_height="wrap_content"
-                    android:text="1" />
-            </com.google.android.material.bottomnavigation.BottomNavigationView>
-        </FrameLayout>
-
     </LinearLayout>
 
 
