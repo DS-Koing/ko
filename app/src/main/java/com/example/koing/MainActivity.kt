@@ -3,16 +3,9 @@ package com.example.koing
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.util.Log
-import android.view.View
-import android.widget.Button
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.koing.databinding.ActivityMainBinding
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
     private val fragmentOrder by lazy { FragmentOrder() }
@@ -63,6 +56,7 @@ class MainActivity : AppCompatActivity() {
             .replace(R.id.main_layout, fragment)
             .commit()
     }
+
 
 
 

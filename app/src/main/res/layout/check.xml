@@ -16,7 +16,7 @@
             android:id="@+id/manager_toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="?attr/colorPrimary"
+            android:background="@color/MainColor"
             android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme">
 
@@ -41,49 +41,6 @@
                 tools:ignore="SpeakableTextPresentCheck" />
 
         </androidx.appcompat.widget.Toolbar>
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/stroke"
-            android:padding="10dp"
-            android:text="회원번호 입력"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp">
-
-            <RadioGroup
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <RadioButton
-                    android:id="@+id/radioButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:buttonTint="@color/MainColor"
-                    android:checked="true"
-                    android:minHeight="48dp"
-                    android:text="비회원"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <RadioButton
-                    android:id="@+id/radioButton2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:buttonTint="@color/MainColor"
-                    android:minHeight="48dp"
-                    android:text="회원"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-            </RadioGroup>
-        </RelativeLayout>
 
         <TextView
             android:id="@+id/textView2"
