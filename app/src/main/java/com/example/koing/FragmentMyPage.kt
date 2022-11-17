@@ -10,6 +10,10 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.preference.PreferenceManager
 import com.example.koing.databinding.FragmentMyPageBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,6 +28,8 @@ private const val ARG_PARAM2 = "param2"
 class FragmentMyPage : Fragment() {
     lateinit var sharedPreferences: SharedPreferences
     lateinit var binding:FragmentMyPageBinding
+    lateinit var auth: FirebaseAuth
+    lateinit var user: FirebaseUser
     private val fragmentSetting by lazy { SettingsFragment() }
     // TODO: Rename and change types of parameters
     private var param1: String? = null
@@ -42,7 +48,7 @@ class FragmentMyPage : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding = FragmentMyPageBinding.inflate(inflater, container, false)
+        binding = FragmentMyPageBinding.inflate(layoutInflater)
 
         // (이재현) Settings 버튼
         binding.mypageBtnSetting.setOnClickListener {
@@ -68,12 +74,21 @@ class FragmentMyPage : Fragment() {
             name = "닉네임이 설정되지 않았습니다."
         binding.mypageTvName.text = name
 
+        auth = Firebase.auth
+        user = auth.currentUser!!
+        binding.mypageTvEmail.text = user.email
+
         binding.mypageBtnLogout.setOnClickListener {
-            Auth.auth.signOut()
-            Auth.email = null
+            auth.signOut()
+            val intent = Intent(context, AuthActivity::class.java)
+            startActivity(intent)
+            Toast.makeText(context, "로그아웃 되었습니다.", Toast.LENGTH_SHORT).show()
         }
 
         binding.mypageBtnDelAccount.setOnClickListener {
+            auth.currentUser!!.delete()
+            val intent = Intent(context, AuthActivity::class.java)
+            startActivity(intent)
         }
         return binding.root
     }
