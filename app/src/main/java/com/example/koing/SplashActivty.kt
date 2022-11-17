@@ -14,9 +14,10 @@ class SplashActivity : AppCompatActivity() {
         // Actionbar 제거
         supportActionBar?.hide()
         //스플래쉬 화면 (MainActivity가 아니라, AuthActivity로 경로 설정해야 회원가입 화면이 뜸)
+        // ->(수정) MainActivity로 이동
         val handler = Handler(Looper.getMainLooper())
         handler.postDelayed(Runnable {
-            Intent(this, AuthActivity::class.java).apply {
+            Intent(this, MainActivity::class.java).apply {
                 startActivity(this)
                 finish()
             }
