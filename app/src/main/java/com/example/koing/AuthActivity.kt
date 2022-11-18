@@ -64,27 +64,36 @@ class AuthActivity : AppCompatActivity() {
                     }
 
                 }
-            /*
-            Auth.auth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this){task ->
-                    binding.authEtEmail.text.clear()
-                    binding.authEtPassword.text.clear()
-                    if(task.isSuccessful){
+        }
+
+        binding.authBtnManager.setOnClickListener {
+            val email = binding.authEtEmail.text.toString()
+            val password = binding.authEtPassword.text.toString()
+            binding.authEtEmail.text.clear()
+            binding.authEtPassword.text.clear()
+
+            auth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this) { task ->
+                    if (task.isSuccessful) {
+                        // Sign in success, update UI with the signed-in user's information
+                        Log.d("TAG", "signInWithEmail:success")
+                        val user = auth.currentUser
                         if(Auth.checkAuth()){
                             Auth.email = email
+                            val intent = Intent(baseContext, ManagerActivity::class.java)
+                            startActivity(intent)
                             finish()
                         }
                         else{
                             Toast.makeText(baseContext, "이메일 인증이 되지 않았습니다.", Toast.LENGTH_SHORT).show()
                         }
+                    } else {
+                        // If sign in fails, display a message to the user.
+                        Log.d("TAG", "signInWithEmail:failure", task.exception)
+                        Toast.makeText(baseContext, "Authentication failed.", Toast.LENGTH_SHORT).show()
                     }
-                    else{
-                        Toast.makeText(baseContext, "로그인 실패", Toast.LENGTH_SHORT).show()
-                    }
+
                 }
-
-
-             */
         }
 
         binding.authBtnSignup.setOnClickListener {
@@ -121,32 +130,6 @@ class AuthActivity : AppCompatActivity() {
                         changeVisivility("signup")
                     }
                 }
-
-            /*
-            Auth.auth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this){task ->
-                    binding.authEtEmail.text.clear()
-                    binding.authEtPassword.text.clear()
-                    if(task.isSuccessful){
-                        Auth.auth.currentUser?.sendEmailVerification()
-                            ?.addOnCompleteListener{sendTask ->
-                                if(sendTask.isSuccessful){
-                                    Toast.makeText(baseContext, "회원가입 성공!!.. 메일을 확인해주세요", Toast.LENGTH_SHORT).show()
-                                    changeVisivility("signup")
-                                }
-                                else{
-                                    Toast.makeText(baseContext, "메일발송 실패", Toast.LENGTH_SHORT).show()
-                                    changeVisivility("signup")
-                                }
-                            }
-                    }
-                    else{
-                        Toast.makeText(baseContext, "회원가입 실패", Toast.LENGTH_SHORT).show()
-                        changeVisivility("signup")
-                    }
-                }
-
-             */
         }
 
         // (이재현) 이메일 형식 검증을 위한 함수
