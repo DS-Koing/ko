@@ -13,11 +13,13 @@ import com.example.koing.databinding.ActivityMainBinding
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import androidx.fragment.app.FragmentActivity
 
 class MainActivity : AppCompatActivity() {
-    private val fragmentOrder by lazy { FragmentOrder() }
     private val fragmentMyPage by lazy { FragmentMyPage() }
     private val fragmentCart by lazy { FragmentCart() }
+
+    private val fragmentOrder by lazy { FragmentOrder() }
     lateinit var binding : ActivityMainBinding
     lateinit var sharedPreferences: SharedPreferences
 
@@ -47,6 +49,7 @@ class MainActivity : AppCompatActivity() {
                 when (it.itemId) {
                     R.id.order -> {
                         changeFragment(fragmentOrder)
+
                     }
                     R.id.cart -> {
                         changeFragment(fragmentCart)

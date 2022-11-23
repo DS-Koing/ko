@@ -17,6 +17,7 @@
         android:textSize="16sp"/>
 
     <com.google.android.material.tabs.TabLayout
+        android:id="@+id/new123"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:tabIndicatorColor="@color/MainColor"
@@ -24,6 +25,7 @@
         app:tabTextAppearance="@style/tab_text">
 
         <com.google.android.material.tabs.TabItem
+            android:id="@+id/라멘"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/tab1" />
@@ -54,10 +56,94 @@
         android:layout_height="0dp"
         android:layout_weight="1">
 
-        <FrameLayout
-            android:id="@+id/frame"
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager01"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <?xml version="1.0" encoding="utf-8"?>
+            <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".FragmentChild">
+
+
+                <androidx.gridlayout.widget.GridLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|center"
+                    app:columnCount="3"
+                    app:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/order_image_menu1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            app:srcCompat="@drawable/image" />
+
+                        <TextView
+                            android:id="@+id/order_menu_name1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:text="@string/menu_name"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/order_menu_price1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:text="@string/menu_price" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/order_image_menu2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/image" />
+
+                        <TextView
+                            android:id="@+id/order_menu_name2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:text="@string/menu_name"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/order_menu_price2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:text="@string/menu_price" />
+                    </LinearLayout>
+
+
+                </androidx.gridlayout.widget.GridLayout>
+
+            </FrameLayout>
+        </androidx.viewpager2.widget.ViewPager2>
 
 
     </ScrollView>
